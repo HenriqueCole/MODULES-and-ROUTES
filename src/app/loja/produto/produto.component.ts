@@ -12,17 +12,14 @@ export class ProdutoComponent implements OnInit {
     private route: ActivatedRoute,
     private router: Router
   ) { 
-    this.idProduto = route.snapshot.paramMap.get('id');
-    console.log(route.params['value']);
-    console.log(route.snapshot.paramMap.get('id'));
-    
+    this.idProduto = route.snapshot.paramMap.get('id');  
   }
 
   ngOnInit() {
   }
 
   voltar(){
-    this.router.navigate(['/produto/'])
+    this.router.navigate(['/loja/produto/'])
   }
 
 }

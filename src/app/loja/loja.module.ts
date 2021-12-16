@@ -5,12 +5,21 @@ import { MainPageComponent } from './main-page/main-page.component';
 import { ProdutoComponent } from './produto/produto.component';
 import { Routes, RouterModule } from '@angular/router';
 
+import CheckLogged from '../checkLogged.canActivate';
+
 const routes: Routes = [
-  { path: '', component: MainPageComponent },
   {
-    path: 'produto', children: [
-      { path: '', component: ProdutosComponent },
-      { path: ':id', component: ProdutoComponent }
+    path: 'loja',
+    canActivate: [CheckLogged],
+    children: [
+      { path: '', component: MainPageComponent },
+      {
+        path: 'produto',
+        children: [
+          { path: '', component: ProdutosComponent },
+          { path: ':id', component: ProdutoComponent }
+        ]
+      }
     ]
   }
 ];
@@ -21,6 +30,7 @@ const routes: Routes = [
     CommonModule
   ],
   declarations: [ProdutosComponent, MainPageComponent, ProdutoComponent],
-  exports: [ProdutosComponent]
+  exports: [ProdutosComponent],
+  providers: [CheckLogged]
 })
 export class LojaModule { }

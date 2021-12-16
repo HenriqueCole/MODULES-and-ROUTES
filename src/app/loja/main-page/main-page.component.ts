@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { GerenciarProdutosComponent } from 'src/app/administration/gerenciar-produtos/gerenciar-produtos.component';
 
 @Component({
   selector: 'app-main-page',
@@ -20,8 +21,7 @@ export class MainPageComponent implements OnInit {
     this.router.navigate(['/produto/'])
   }
 
-  abrirLogin(login){
-    this.router.navigate(['/login/'])
+  abrirGerenciarProdutos(gerenciarProdutos){
+    this.router.navigate(['/gerenciar-produtos/'])
   }
-
 }

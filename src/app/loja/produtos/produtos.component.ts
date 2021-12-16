@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-produtos',
@@ -13,7 +13,8 @@ export class ProdutosComponent implements OnInit {
   ]
 
   constructor(
-    private router: Router,
+    private route: ActivatedRoute,
+    private router: Router
   ) { }
 
   ngOnInit() {
@@ -21,6 +22,10 @@ export class ProdutosComponent implements OnInit {
 
   abrirProduto(produto) {
     this.router.navigate(['/produto/', produto])
+  }
+
+  voltarParaMain(){
+    this.router.navigate(['/'])
   }
 
 }

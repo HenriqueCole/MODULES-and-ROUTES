@@ -12,7 +12,10 @@ export class ProdutoComponent implements OnInit {
     private route: ActivatedRoute,
     private router: Router
   ) { 
-    this.idProduto = route.params.value.id;
+    this.idProduto = route.snapshot.paramMap.get('id');
+    console.log(route.params['value']);
+    console.log(route.snapshot.paramMap.get('id'));
+    
   }
 
   ngOnInit() {

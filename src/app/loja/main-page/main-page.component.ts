@@ -20,4 +20,8 @@ export class MainPageComponent implements OnInit {
     this.router.navigate(['/produto/'])
   }
 
+  abrirLogin(login){
+    this.router.navigate(['/login/'])
+  }
+
 }
